@@ -1,8 +1,10 @@
 #import "@preview/pigmentpedia:0.3.3": pantone
 
+#let american = false
+
 #set page(
-  paper: "us-letter",
-  margin: (x: 1cm, y: 1cm),
+  paper: if american { "us-letter" } else { "a4" },
+  margin: if american { (x: 0.5in, y: 0.5in) } else { (x: 1cm, y: 1cm) },
 )
 
 #set text(
@@ -36,18 +38,22 @@
 // Section heading style
 #show heading.where(level: 1): it => {
   set text(fill: secondary, size: 12pt, weight: "regular")
-  smallcaps(it.body)
-  v(-8pt)
-  line(length: 100%, stroke: 0.5pt + secondary)
-  v(2pt)
+  block(breakable: false)[
+    #smallcaps(it.body)
+    #v(-8pt)
+    #line(length: 100%, stroke: 0.5pt + secondary)
+    #v(2pt)
+  ]
 }
 
 // Subsection heading style
 #show heading.where(level: 2): it => {
   set text(size: 11pt, weight: "bold")
-  v(-2pt)
-  it
-  v(-2pt)
+  block(breakable: false)[
+    #v(-2pt)
+    #it
+    #v(-2pt)
+  ]
 }
 
 #let position(title, years, organization, location) = [
