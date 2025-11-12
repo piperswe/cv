@@ -40,6 +40,7 @@
 #show heading.where(level: 1): it => {
   set text(fill: secondary, size: 12pt, weight: "regular")
   block(breakable: false)[
+    #v(12pt)
     #smallcaps(it.body)
     #v(-8pt)
     #line(length: 100%, stroke: 0.5pt + secondary)
@@ -103,7 +104,7 @@
 
 
   #block(width: 80%)[
-    #par(leading: .5em)[
+    #par(leading: 5pt)[
       #emph[
         Curious about something? If it's #text(fill: secondary)[this color], it's probably a link to a related webpage - no need to go searching around! \
         Extra curious? Feel free to ask me about anything here, I'm happy to talk about any of it.
@@ -112,50 +113,49 @@
   ]
 ]
 
-#v(-4pt)
-
 = Full-Time Experience
 
-#position(
-  [Systems Engineer, #link("https://www.cloudflare.com/application-services/products/load-balancing/")[Load Balancing] - Health & Analytics],
-  [Sept 2025 --- Present],
-  link("https://www.cloudflare.com/")[Cloudflare],
-  [#osmrelationhref("113314", "Austin, TX, USA")\; Hybrid with distributed team]
-)
+#block(breakable: false)[
+  #position(
+    [Systems Engineer, Load Balancing - Health & Analytics],
+    [Sept 2025 --- Present],
+    link("https://www.cloudflare.com/")[Cloudflare],
+    [#osmrelationhref("113314", "Austin, TX, USA")\; Hybrid with distributed team]
+  )
+  #position(
+    [Systems Engineer, Waiting Room & Health Checks],
+    [Nov 2021 --- Sept 2025],
+    link("https://www.cloudflare.com/")[Cloudflare],
+    [#osmrelationhref("113314", "Austin, TX, USA")\; Hybrid with distributed team]
+  )
+  
+  - Maintained Go services (HTTP/gRPC servers, Kafka consumers, etc.) for #link("https://www.cloudflare.com/application-services/products/waiting-room/")[Waiting Room], #link("https://developers.cloudflare.com/health-checks/")[Health Checks], and #link("https://www.cloudflare.com/application-services/products/load-balancing/")[Load Balancing] products
+  - Deployed said Go services to Kubernetes and the Cloudflare edge, rolling out deployments across thousands of machines and monitoring for impact
+  - Maintained and deployed Go services, similar to those of Load Balancing
+  - Maintained JavaScript and TypeScript services, built on and dogfooding #link("https://workers.cloudflare.com/")[Cloudflare Workers] and #link("https://developers.cloudflare.com/workers/runtime-apis/durable-objects")[Cloudflare Durable Objects] as a complex globally distributed system, for the #link("https://www.cloudflare.com/waiting-room/")[Waiting Room] product
+  - Submitted changes to Go, Rust, JavaScript, TypeScript, and Lua codebases maintained by other teams, for the purpose of integration with my team's products
+  - Built integration between Waiting Room and Cloudflare's #link("https://developers.cloudflare.com/ruleset-engine/")[Edge Rules Engine], a multi-service product with Go, Rust, and Lua components, to help satisfy one of the largest asks from customers and secure a large sales contract
+  - Collaborated remotely with teams in America and Europe alike - with most of my team being in the San Francisco Bay Area and many infrastructure teams (e.g. Edge Rules Engine) being in London
+  - Built parts of an analytics pipeline, channelling data from global Waiting Room requests through multiple Cloudflare Workers and Durable Objects, serializing data to #link("https://capnproto.org/")[Cap'n Proto] messages, and passing those messages through Kafka to a #link("https://clickhouse.com/")[ClickHouse] inserter.
+  - Wrote the technical sections of multiple Cloudflare Blog posts about the details of inter-product integrations @olache_introducing_2023@wyatt_banish_2025
+  - Optimized CI for a service, reducing CI runtime from 30 minutes to 10 minutes
+  - Deployed a #link("https://www.fedramp.gov/archive/2017-11-16-understanding-baselines-and-impact-levels/")[FedRAMP High]-compliant version of the Waiting Room product on-time, despite setbacks from upstream dependencies
+]
 
-- Maintained Go services (HTTP/gRPC servers, Kafka consumers, etc.) for the #link("https://www.cloudflare.com/application-services/products/load-balancing/")[Load Balancing] product's health and analytics pipeline
-- Deployed said Go services to Kubernetes and the Cloudflare edge, rolling out deployments across thousands of machines and monitoring for impact
-
-#position(
-  [Systems Engineer, #link("https://www.cloudflare.com/application-services/products/waiting-room/")[Waiting Room] & #link("https://developers.cloudflare.com/health-checks/")[Health Checks]],
-  [Nov 2021 --- Sept 2025],
-  link("https://www.cloudflare.com/")[Cloudflare],
-  [#osmrelationhref("113314", "Austin, TX, USA")\; Hybrid with distributed team]
-)
-
-- Maintained Go services (HTTP/gRPC servers, Kafka consumers, etc.) for #link("https://www.cloudflare.com/application-services/products/waiting-room/")[Waiting Room] and #link("https://developers.cloudflare.com/health-checks/")[Health Checks] products
-- Deployed said Go services to Kubernetes and the Cloudflare edge, rolling out deployments across thousands of machines and monitoring for impact
-- Maintained JavaScript and TypeScript services, built on and dogfooding #link("https://workers.cloudflare.com/")[Cloudflare Workers] and #link("https://developers.cloudflare.com/workers/runtime-apis/durable-objects")[Cloudflare Durable Objects] as a complex globally distributed system, for the #link("https://www.cloudflare.com/waiting-room/")[Waiting Room] product
-- Submitted changes to Go, Rust, JavaScript, TypeScript, and Lua codebases maintained by other teams, for the purpose of integration with my team's products
-- Built integration between Waiting Room and Cloudflare's #link("https://developers.cloudflare.com/ruleset-engine/")[Edge Rules Engine], a multi-service product with Go, Rust, and Lua components, to help satisfy one of the largest asks from customers and secure a large sales contract
-- Collaborated remotely with teams in America and Europe alike - with most of my team being in the San Francisco Bay Area and many infrastructure teams (e.g. Edge Rules Engine) being in London
-- Built parts of an analytics pipeline, channelling data from global Waiting Room requests through multiple Cloudflare Workers and Durable Objects, serializing data to #link("https://capnproto.org/")[Cap'n Proto] messages, and passing those messages through Kafka to a #link("https://clickhouse.com/")[ClickHouse] inserter.
-- Wrote the technical sections of multiple Cloudflare Blog posts about the details of inter-product integrations @olache_introducing_2023@wyatt_banish_2025
-- Optimized CI for a service, reducing CI runtime from 30 minutes to 10 minutes
-- Deployed a #link("https://www.fedramp.gov/archive/2017-11-16-understanding-baselines-and-impact-levels/")[FedRAMP High]-compliant version of the Waiting Room product on-time, despite setbacks from upstream dependencies
-
-#position(
-  [Software Engineer],
-  [Oct 2019 --- Nov 2021],
-  link("https://www.ladderlife.com/")[Ladder],
-  [#osmrelationhref("1544955", "Palo Alto, CA, USA")\; Remote during COVID-19]
-)
-
-- Deployed microservices written in Clojure/ClojureScript on Kubernetes, using Kafka as a message queue
-- Built user-facing experiments which, in aggregate, nearly doubled overall conversion rates
-- Worked with compliance department to ensure compliance with all applicable laws
-- Built and refined internal engineering tools to increase fellow engineers' productivity
-- Mentored new hires, bringing them up to speed well ahead of schedule
+#block(breakable: false)[
+  #position(
+    [Software Engineer],
+    [Oct 2019 --- Nov 2021],
+    link("https://www.ladderlife.com/")[Ladder],
+    [#osmrelationhref("1544955", "Palo Alto, CA, USA")\; Remote during COVID-19]
+  )
+  
+  - Deployed microservices written in Clojure/ClojureScript on Kubernetes, using Kafka as a message queue
+  - Built user-facing experiments which, in aggregate, nearly doubled overall conversion rates
+  // - Worked with compliance department to ensure compliance with all applicable laws
+  // - Built and refined internal engineering tools to increase fellow engineers' productivity
+  - Mentored new hires, bringing them up to speed well ahead of schedule
+]
 
 // #position(
 //   [Software Engineer],
@@ -167,7 +167,6 @@
 = Technical Skills/Keywords
 
 #emph[Listed in no particular order.]
-
 #table(
   columns: (auto, auto, 1fr),
   stroke: none,
@@ -264,8 +263,8 @@
     #link("https://www.xero.com/us/")[Xero],
     #link("https://gusto.com/")[Gusto],
     #link("https://www.ledger-cli.org/")[ledger] (#link("https://hledger.org/")[hledger]),
-    #link("https://www.gnucash.org/")[GnuCash],
-    #link("https://carta.com/")[Carta] (both managing as a business and using as an employee)
+    #link("https://www.gnucash.org/")[GnuCash]
+    // #link("https://carta.com/")[Carta] (both managing as a business and using as an employee)
   ],
 
   [*Design/CAD*], [], [
@@ -291,51 +290,59 @@
   ]
 )
 
-= Entrepreneurship and Part-Time Experience
+#block(breakable: false)[
+  = Entrepreneurship and Part-Time Experience
+  
+  #position(
+    [Founder, Engineer],
+    [2017 --- 2023],
+    [#link("https://lutris.engineering/")[Lutris] (formerly Conduit Implementations)],
+    osmrelationhref("6586770", "Brenham, TX, USA")
+  )
+  
+  - Founded the company, incorporated with the state of Texas
+  - Operated an Internet BGP autonomous system on Mikrotik RouterOS
+  - Operated virtualization infrastructure on Proxmox
+  - Managed both bare metal and cloud Kubernetes clusters
+  - Undertook many contract projects for an assortment of clients, from embedded AVR programming with C for industrial machinery to full stack web development with React and Node.js for court data analysis
+  
+  #position(
+    [Consultant],
+    [2021],
+    link("https://www.hydrotek.io/")[Hydrotek],
+    [#osmrelationhref("253556", "San Antonio, TX, USA")\; Mostly Remote]
+  )
+  
+  - Kick-started the mobile React Native app development project
+]
 
-#position(
-  [Founder, Engineer],
-  [2017 --- 2023],
-  [#link("https://lutris.engineering/")[Lutris] (formerly Conduit Implementations)],
-  osmrelationhref("6586770", "Brenham, TX, USA")
-)
+// #block(breakable: false)[
+//   = Volunteer Experience
+  
+//   #position(
+//     [President of the Board, Treasurer],
+//     [2021 --- 2022],
+//     [fleetbase (defunct)],
+//     osmrelationhref("6586770", "Brenham, TX, USA")
+//   )
+  
+//   - Managed the day-to-day activities of the organization
+//   - Completed bookkeeping, accounts receivable, accounts payable, and other accounting tasks
+//   - Organized club activities
+// ]
 
-- Founded the company, incorporated with the state of Texas
-- Operated an Internet BGP autonomous system on Mikrotik RouterOS
-- Operated virtualization infrastructure on Proxmox
-- Managed both bare metal and cloud Kubernetes clusters
-- Undertook many contract projects for an assortment of clients, from embedded AVR programming with C for industrial machinery to full stack web development with React and Node.js for court data analysis
+#block(breakable: false)[
+  = Education
+  
+  #position(
+    [Part-Time Student, BSc (Hons) Mathematics],
+    [2026 -- Present],
+    link("https://www.open.ac.uk/")[Open University],
+    [Remote]
+  )
+]
 
-#position(
-  [Consultant],
-  [2021],
-  link("https://www.hydrotek.io/")[Hydrotek],
-  [#osmrelationhref("253556", "San Antonio, TX, USA")\; Mostly Remote]
-)
-
-- Kick-started the mobile React Native app development project
-
-= Volunteer Experience
-
-#position(
-  [President of the Board, Treasurer],
-  [2021 --- 2022],
-  [fleetbase (defunct)],
-  osmrelationhref("6586770", "Brenham, TX, USA")
-)
-
-- Managed the day-to-day activities of the organization
-- Completed bookkeeping, accounts receivable, accounts payable, and other accounting tasks
-- Organized club activities
-
-= Education
-
-#position(
-  [Part-Time Student, BSc (Hons) Mathematics],
-  [2026 -- Present],
-  link("https://www.open.ac.uk/")[Open University],
-  [Remote]
-)
-
-#cite(label("mccorkle_how_2021"), form: none)
-#bibliography("zotero.bib", title: "Selected Publications and Other Writing", style: "association-for-computing-machinery")
+#block(breakable: false)[
+  #cite(label("mccorkle_how_2021"), form: none)
+  #bibliography("zotero.bib", title: "Selected Publications and Other Writing", style: "association-for-computing-machinery")
+]
