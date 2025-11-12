@@ -14,10 +14,10 @@
   size: 10pt,
 )
 
+#let primary = pantone.c.black
 #let secondary = pantone.c._220
-
-// Set link color
-#show link: set text(fill: if print { black } else { secondary })
+#set text(fill: primary)
+#show link: set text(fill: if print { primary } else { secondary })
 
 // Helper function for OSM relation links
 #let osmrelationhref(id, text) = link("https://www.openstreetmap.org/relation/" + id)[#text]
