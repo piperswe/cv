@@ -1,6 +1,7 @@
 #import "@preview/pigmentpedia:0.3.3": pantone
 
 #let american = false
+#let print = false
 
 #set document(title: "Piper McCorkle CV")
 #set page(
@@ -16,7 +17,7 @@
 #let secondary = pantone.c._220
 
 // Set link color
-#show link: set text(fill: secondary)
+#show link: set text(fill: if print { black } else { secondary })
 
 // Helper function for OSM relation links
 #let osmrelationhref(id, text) = link("https://www.openstreetmap.org/relation/" + id)[#text]
@@ -103,11 +104,13 @@
   ]
 
 
-  #block(width: 80%)[
-    #par(leading: 5pt)[
-      #emph[
-        Curious about something? If it's #text(fill: secondary)[this color], it's probably a link to a related webpage - no need to go searching around! \
-        Extra curious? Feel free to ask me about anything here, I'm happy to talk about any of it.
+  #if not print [
+    #block(width: 80%)[
+      #par(leading: 5pt)[
+        #emph[
+          Curious about something? If it's #text(fill: secondary)[this color], it's probably a link to a related webpage - no need to go searching around! \
+          Extra curious? Feel free to ask me about anything here, I'm happy to talk about any of it.
+        ]
       ]
     ]
   ]
