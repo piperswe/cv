@@ -47,6 +47,10 @@
             #   src = "${inputs.font-awesome}/svgs/regular";
             # }
           ];
+
+          typstOpts = {
+            pdf-standard = "ua-1";
+          };
         };
 
         unstable_typstPackages = [

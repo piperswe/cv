@@ -2,6 +2,7 @@
 
 #let american = false
 
+#set document(title: "Piper McCorkle CV")
 #set page(
   paper: if american { "us-letter" } else { "a4" },
   margin: if american { (x: 0.5in, y: 0.5in) } else { (x: 1cm, y: 1cm) },
@@ -100,7 +101,7 @@
     ]
   ]
 
-  
+
   #block(width: 60%)[
     #par(justify: true)[
       #emph[
