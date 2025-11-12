@@ -102,8 +102,8 @@
   ]
 
 
-  #block(width: 60%)[
-    #par(justify: true)[
+  #block(width: 80%)[
+    #par(leading: .5em)[
       #emph[
         Curious about something? If it's #text(fill: secondary)[this color], it's probably a link to a related webpage - no need to go searching around! \
         Extra curious? Feel free to ask me about anything here, I'm happy to talk about any of it.
